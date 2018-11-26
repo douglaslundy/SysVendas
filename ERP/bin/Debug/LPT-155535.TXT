@@ -1,0 +1,24 @@
+Carlos dos Santos - MVP C#
+CDS Informática Ltda.
+-------------------------------------
+Componente de impressao em modo texto
+Linha impressa 0
+Linha impressa 1
+Linha impressa 2
+Linha impressa 3
+Linha impressa 4
+ENegrito ligadoF
+Expandido
+Comprimido
+
+
+          Coluna 10                                        Coluna 40
+
+08 linha ppp
+8 linha ppp
+8 linha ppp
+26 linha ppp
+6 linha ppp
+6 linha ppp
+
+
