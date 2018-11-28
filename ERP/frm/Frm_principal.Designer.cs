@@ -247,6 +247,7 @@
             this.Backup.Name = "Backup";
             this.Backup.Size = new System.Drawing.Size(64, 64);
             this.Backup.Text = "Backup";
+            this.Backup.Click += new System.EventHandler(this.Backup_Click);
             // 
             // pictureBox1
             // 
@@ -270,7 +271,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(908, 22);
             this.statusStrip1.TabIndex = 5;
@@ -279,7 +280,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(138, 17);
             this.toolStripStatusLabel1.Text = "Bem Vindo ao sysVendas";
             // 
             // toolStripStatusLabel2
@@ -309,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(908, 543);
+            this.ClientSize = new System.Drawing.Size(908, 544);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);

@@ -1,4 +1,5 @@
-﻿using ERP.SessaoUsuario;
+﻿using BackupMySql;
+using ERP.SessaoUsuario;
 using System;
 using System.Windows.Forms;
 using SysVendas.frm;
@@ -247,6 +248,27 @@ namespace ERP.frm
         private void clientesInadimplentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbreFormClientes_inadimplenteso();
+        }
+
+        private void Backup_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Deseja Realizar o Backup Agora?", "Realizar Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                try
+                {
+                    Backup bkp = new Backup();
+
+                    Frm_barra_rolagem progress = new Frm_barra_rolagem();
+                    progress.Show();
+
+                    bkp.fazerBackup();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("O Backup não pode ser realizado?", "Erro ao realizar backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

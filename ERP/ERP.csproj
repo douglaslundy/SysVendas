@@ -241,6 +241,12 @@
     <Compile Include="Equipamentos\Equipamento.cs" />
     <Compile Include="Equipamentos\EquipamentoDAO.cs" />
     <Compile Include="Equipamentos\IEquipamento.cs" />
+    <Compile Include="frm\Frm_barra_rolagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\Frm_barra_rolagem.Designer.cs">
+      <DependentUpon>Frm_barra_rolagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\Frm_cadastro_equipamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -465,6 +471,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysVendasContexto.cs" />
+    <EmbeddedResource Include="frm\Frm_barra_rolagem.resx">
+      <DependentUpon>Frm_barra_rolagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_cadastrar_cliente.resx">
       <DependentUpon>Frm_cadastrar_cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +630,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\BackupMySql\BackupMySql\BackupMySql.csproj">
+      <Project>{f18afc10-7782-4192-9775-1cb54ddcef7d}</Project>
+      <Name>BackupMySql</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

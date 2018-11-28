@@ -43,14 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERP.exe" size="2732016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BackupMySql.dll" size="5120">
+      <assemblyIdentity name="BackupMySql" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>CHawya8C2tt6DL6N1qzjYGqNNV5aV7hW8JxfLPyUcjA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERP.exe" size="2900976">
       <assemblyIdentity name="ERP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CzBhyib/7NwetjqZv4X5rw76AkPWJmOB9OIaZh0GF/8=</dsig:DigestValue>
+        <dsig:DigestValue>5eZ0mhy9fOltBosBGTZONmG5ey3Mg1VYVAId3O1YUJk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +74,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TTTAgCXWGZxwJyTFEM3FWK6vpRmPONpnwnleY/CaRVw=</dsig:DigestValue>
+        <dsig:DigestValue>1t9d5kgi4XlPMqWAtKBvyNnk6Z3V3SzvoY0tsByErwc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Protobuf.dll" size="294400">
+      <assemblyIdentity name="Google.Protobuf" version="3.5.1.0" publicKeyToken="A7D26565BAC4D604" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kmmLSyM9YCkmP+X33YMDTg/6sJlFHUuInLwRv1o/LXM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -255,6 +279,30 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>XqougqJrCzAigNCPVNydolFl3Q4oa+UkQKJxKF1j9pU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="709632">
+      <assemblyIdentity name="MySql.Data" version="8.0.13.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4KnTND0fQ/2Rby4HrRdCc31GxR+Yho9GbxngMs6Zf/g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySqlBackup.dll" size="60928">
+      <assemblyIdentity name="MySqlBackup" version="2.0.12.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OsGLwzEnzV6mfClxleJz+EGKtM4mRumHY9CrumGz/V4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1575,13 +1623,13 @@
       <dsig:DigestValue>y86n5G9XFJqvl5by+nfIUTCa4qwmt8PqYo0ddotq2r0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ERP.exe.config" size="20078">
+  <file name="ERP.exe.config" size="20402">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>IS8XL3f7CWTyivPFU635Yd+F4fMrPPndZZe2/wTO87U=</dsig:DigestValue>
+      <dsig:DigestValue>83fkq4IexrwMCrEZYeztFefQ4gWRkmes2Lrprh92ikE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="images\03.ico" size="67646">
