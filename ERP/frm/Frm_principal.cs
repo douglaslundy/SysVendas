@@ -1,6 +1,8 @@
 ﻿using BackupMySql;
 using ERP.SessaoUsuario;
 using System;
+using System.Net;
+using System.Net.Mail;
 using System.Windows.Forms;
 using SysVendas.frm;
 
@@ -13,7 +15,7 @@ namespace ERP.frm
         {
             InitializeComponent();
 
-            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             toolStripStatusLabel3.Text = "Seu sistema expira emm ";
             Login = login;
         }
@@ -255,19 +257,54 @@ namespace ERP.frm
             DialogResult confirm = MessageBox.Show("Deseja Realizar o Backup Agora?", "Realizar Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (confirm.ToString().ToUpper() == "YES")
             {
+
                 try
                 {
-                    Backup bkp = new Backup();
+                    //Aqui você cria a requisição
+                    WebRequest request = WebRequest.Create("https://www.google.com.br/");
 
+                    //Envia a requisição e recebe uma resposta ,  não recebendo é lançada uma exceção e o código segue pro catch
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                    //Testa se o status code da resposta foi 200 ,  que é retornado quando a url está online .
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+
+                        string mail = null;
+                        Backup bkp = new Backup();
+                        Frm_barra_rolagem progress = new Frm_barra_rolagem();
+                        progress.Show();
+                        new EnviarMail().enviarEmail();
+                        mail = bkp.fazerBackup();
+                        new EnviarBackupMail().enviarEmailComBackup(mail + ".zip");
+                    }
+                    else
+                    {
+                        Backup bkp = new Backup();
+                        Frm_barra_rolagem progress = new Frm_barra_rolagem();
+                        progress.Show();
+                        bkp.fazerBackup();
+                    }
+                }
+                catch (UriFormatException)
+                {
+                    Backup bkp = new Backup();
                     Frm_barra_rolagem progress = new Frm_barra_rolagem();
                     progress.Show();
-
+                    bkp.fazerBackup();
+                }
+                catch (SystemException) {
+                    Backup bkp = new Backup();
+                    Frm_barra_rolagem progress = new Frm_barra_rolagem();
+                    progress.Show();
                     bkp.fazerBackup();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("O Backup não pode ser realizado?", "Erro ao realizar backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("O Backup não pode ser realizado? " + ex.GetType(), "Erro ao realizar backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
         }
     }
