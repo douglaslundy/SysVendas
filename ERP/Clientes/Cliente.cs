@@ -65,10 +65,10 @@ namespace ERP.Clientes
             return Cliente.PesquisarPorId(Id);
         }
 
-        public IList<Cliente> PesquisarPorNomeOuCpf(string termo)
+        public IList<Cliente> PesquisarPorNomeOuCpf(string nome)
         {
             var Cliente = new ClienteDAO();
-             return Cliente.PesquisarPorNomeOuCpf(termo);
+             return Cliente.PesquisarPorNomeOuCpf(nome);
         }
         
     }

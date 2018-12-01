@@ -631,8 +631,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BackupMySql\BackupMySql\BackupMySql.csproj">
-      <Project>{f18afc10-7782-4192-9775-1cb54ddcef7d}</Project>
+    <ProjectReference Include="..\..\..\BackupMySql\BackupMySql\BackupMySql.csproj">
+      <Project>{F18AFC10-7782-4192-9775-1CB54DDCEF7D}</Project>
       <Name>BackupMySql</Name>
     </ProjectReference>
   </ItemGroup>

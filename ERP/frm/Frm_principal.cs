@@ -1,10 +1,10 @@
-﻿using BackupMySql;
-using ERP.SessaoUsuario;
+﻿using ERP.SessaoUsuario;
 using System;
-using System.Net;
-using System.Net.Mail;
 using System.Windows.Forms;
 using SysVendas.frm;
+using MySql.Data.MySqlClient;
+using System.Net;
+using BackupMySql;
 
 namespace ERP.frm
 {
@@ -15,7 +15,7 @@ namespace ERP.frm
         {
             InitializeComponent();
 
-            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/mm/yyyy");
             toolStripStatusLabel3.Text = "Seu sistema expira emm ";
             Login = login;
         }
@@ -252,6 +252,7 @@ namespace ERP.frm
             AbreFormClientes_inadimplenteso();
         }
 
+
         private void Backup_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show("Deseja Realizar o Backup Agora?", "Realizar Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
@@ -294,7 +295,8 @@ namespace ERP.frm
                     progress.Show();
                     bkp.fazerBackup();
                 }
-                catch (SystemException) {
+                catch (SystemException)
+                {
                     Backup bkp = new Backup();
                     Frm_barra_rolagem progress = new Frm_barra_rolagem();
                     progress.Show();

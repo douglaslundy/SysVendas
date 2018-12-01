@@ -32,11 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadastro_equipamento));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_clientes = new System.Windows.Forms.DataGridView();
+            this.dgv_equipamentos = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cartaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnderecoInstalacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.equipamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_gravar = new System.Windows.Forms.Button();
             this.txt_Caid = new System.Windows.Forms.TextBox();
-            this.text_Cartao = new System.Windows.Forms.TextBox();
+            this.txt_Cartao = new System.Windows.Forms.TextBox();
             this.lbCaid = new System.Windows.Forms.Label();
             this.lbCartao = new System.Windows.Forms.Label();
             this.lb_NomeCliente = new System.Windows.Forms.Label();
@@ -46,13 +52,9 @@
             this.txt_endereco = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cartaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnderecoInstalacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
+            this.btn_abrir = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_equipamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,27 +78,81 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Cliente:";
             // 
-            // dgv_clientes
+            // dgv_equipamentos
             // 
-            this.dgv_clientes.AllowUserToAddRows = false;
-            this.dgv_clientes.AllowUserToDeleteRows = false;
-            this.dgv_clientes.AutoGenerateColumns = false;
-            this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgv_clientes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_equipamentos.AllowUserToAddRows = false;
+            this.dgv_equipamentos.AllowUserToDeleteRows = false;
+            this.dgv_equipamentos.AutoGenerateColumns = false;
+            this.dgv_equipamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_equipamentos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgv_equipamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_equipamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.NomeUsuario,
             this.caidDataGridViewTextBoxColumn,
             this.cartaoDataGridViewTextBoxColumn,
             this.EnderecoInstalacao,
             this.ativoDataGridViewCheckBoxColumn});
-            this.dgv_clientes.DataSource = this.equipamentoBindingSource;
-            this.dgv_clientes.Location = new System.Drawing.Point(12, 189);
-            this.dgv_clientes.Name = "dgv_clientes";
-            this.dgv_clientes.ReadOnly = true;
-            this.dgv_clientes.Size = new System.Drawing.Size(760, 169);
-            this.dgv_clientes.TabIndex = 35;
+            this.dgv_equipamentos.DataSource = this.equipamentoBindingSource;
+            this.dgv_equipamentos.Location = new System.Drawing.Point(12, 189);
+            this.dgv_equipamentos.Name = "dgv_equipamentos";
+            this.dgv_equipamentos.ReadOnly = true;
+            this.dgv_equipamentos.Size = new System.Drawing.Size(760, 169);
+            this.dgv_equipamentos.TabIndex = 35;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.Frozen = true;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 41;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeUsuario.DataPropertyName = "NomeUsuario";
+            this.NomeUsuario.HeaderText = "Nome do usuario";
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 150;
+            // 
+            // caidDataGridViewTextBoxColumn
+            // 
+            this.caidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.caidDataGridViewTextBoxColumn.DataPropertyName = "Caid";
+            this.caidDataGridViewTextBoxColumn.HeaderText = "Caid";
+            this.caidDataGridViewTextBoxColumn.Name = "caidDataGridViewTextBoxColumn";
+            this.caidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.caidDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cartaoDataGridViewTextBoxColumn
+            // 
+            this.cartaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.cartaoDataGridViewTextBoxColumn.DataPropertyName = "Cartao";
+            this.cartaoDataGridViewTextBoxColumn.HeaderText = "Cartão";
+            this.cartaoDataGridViewTextBoxColumn.Name = "cartaoDataGridViewTextBoxColumn";
+            this.cartaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cartaoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // EnderecoInstalacao
+            // 
+            this.EnderecoInstalacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EnderecoInstalacao.DataPropertyName = "EnderecoInstalacao";
+            this.EnderecoInstalacao.HeaderText = "Endereco da instalacao";
+            this.EnderecoInstalacao.Name = "EnderecoInstalacao";
+            this.EnderecoInstalacao.ReadOnly = true;
+            this.EnderecoInstalacao.Width = 150;
+            // 
+            // ativoDataGridViewCheckBoxColumn
+            // 
+            this.ativoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewCheckBoxColumn.Width = 60;
             // 
             // equipamentoBindingSource
             // 
@@ -112,6 +168,7 @@
             this.btn_gravar.TabIndex = 36;
             this.btn_gravar.Text = "[ F12 ] - Gravar";
             this.btn_gravar.UseVisualStyleBackColor = true;
+            this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
             // 
             // txt_Caid
             // 
@@ -119,15 +176,15 @@
             this.txt_Caid.Location = new System.Drawing.Point(16, 137);
             this.txt_Caid.Name = "txt_Caid";
             this.txt_Caid.Size = new System.Drawing.Size(205, 26);
-            this.txt_Caid.TabIndex = 37;
+            this.txt_Caid.TabIndex = 2;
             // 
-            // text_Cartao
+            // txt_Cartao
             // 
-            this.text_Cartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Cartao.Location = new System.Drawing.Point(227, 137);
-            this.text_Cartao.Name = "text_Cartao";
-            this.text_Cartao.Size = new System.Drawing.Size(205, 26);
-            this.text_Cartao.TabIndex = 38;
+            this.txt_Cartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Cartao.Location = new System.Drawing.Point(227, 137);
+            this.txt_Cartao.Name = "txt_Cartao";
+            this.txt_Cartao.Size = new System.Drawing.Size(205, 26);
+            this.txt_Cartao.TabIndex = 3;
             // 
             // lbCaid
             // 
@@ -191,11 +248,12 @@
             // 
             // txt_endereco
             // 
+            this.txt_endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_endereco.Location = new System.Drawing.Point(438, 137);
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(334, 26);
-            this.txt_endereco.TabIndex = 44;
+            this.txt_endereco.TabIndex = 4;
             // 
             // label5
             // 
@@ -209,65 +267,37 @@
             // 
             // txt_usuario
             // 
+            this.txt_usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_usuario.Location = new System.Drawing.Point(16, 80);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(334, 26);
-            this.txt_usuario.TabIndex = 46;
+            this.txt_usuario.TabIndex = 1;
             // 
-            // idDataGridViewTextBoxColumn
+            // btn_abrir
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
+            this.btn_abrir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_abrir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_abrir.Location = new System.Drawing.Point(638, 70);
+            this.btn_abrir.Name = "btn_abrir";
+            this.btn_abrir.Size = new System.Drawing.Size(126, 36);
+            this.btn_abrir.TabIndex = 48;
+            this.btn_abrir.Text = "[ F4 ] - Abrir";
+            this.btn_abrir.UseVisualStyleBackColor = true;
+            this.btn_abrir.Click += new System.EventHandler(this.btn_abrir_Click);
             // 
-            // NomeUsuario
+            // btn_excluir
             // 
-            this.NomeUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NomeUsuario.DataPropertyName = "NomeUsuario";
-            this.NomeUsuario.HeaderText = "Nome do usuario";
-            this.NomeUsuario.Name = "NomeUsuario";
-            this.NomeUsuario.ReadOnly = true;
-            this.NomeUsuario.Width = 150;
-            // 
-            // caidDataGridViewTextBoxColumn
-            // 
-            this.caidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.caidDataGridViewTextBoxColumn.DataPropertyName = "Caid";
-            this.caidDataGridViewTextBoxColumn.HeaderText = "Caid";
-            this.caidDataGridViewTextBoxColumn.Name = "caidDataGridViewTextBoxColumn";
-            this.caidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.caidDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cartaoDataGridViewTextBoxColumn
-            // 
-            this.cartaoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.cartaoDataGridViewTextBoxColumn.DataPropertyName = "Cartao";
-            this.cartaoDataGridViewTextBoxColumn.HeaderText = "Cartão";
-            this.cartaoDataGridViewTextBoxColumn.Name = "cartaoDataGridViewTextBoxColumn";
-            this.cartaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cartaoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // EnderecoInstalacao
-            // 
-            this.EnderecoInstalacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.EnderecoInstalacao.DataPropertyName = "EnderecoInstalacao";
-            this.EnderecoInstalacao.HeaderText = "Endereco da instalacao";
-            this.EnderecoInstalacao.Name = "EnderecoInstalacao";
-            this.EnderecoInstalacao.ReadOnly = true;
-            this.EnderecoInstalacao.Width = 150;
-            // 
-            // ativoDataGridViewCheckBoxColumn
-            // 
-            this.ativoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
-            this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
-            this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
-            this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.ativoDataGridViewCheckBoxColumn.Width = 60;
+            this.btn_excluir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Location = new System.Drawing.Point(492, 374);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(122, 36);
+            this.btn_excluir.TabIndex = 49;
+            this.btn_excluir.Text = "[ F10 ] - Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Visible = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // Frm_cadastro_equipamento
             // 
@@ -275,6 +305,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 422);
+            this.Controls.Add(this.btn_excluir);
+            this.Controls.Add(this.btn_abrir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.label4);
@@ -284,10 +316,10 @@
             this.Controls.Add(this.lb_NomeCliente);
             this.Controls.Add(this.lbCartao);
             this.Controls.Add(this.lbCaid);
-            this.Controls.Add(this.text_Cartao);
+            this.Controls.Add(this.txt_Cartao);
             this.Controls.Add(this.txt_Caid);
             this.Controls.Add(this.btn_gravar);
-            this.Controls.Add(this.dgv_clientes);
+            this.Controls.Add(this.dgv_equipamentos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -296,7 +328,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Equipamento";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_cadastro_equipamento_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_equipamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,10 +339,10 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_clientes;
+        private System.Windows.Forms.DataGridView dgv_equipamentos;
         private System.Windows.Forms.Button btn_gravar;
         private System.Windows.Forms.TextBox txt_Caid;
-        private System.Windows.Forms.TextBox text_Cartao;
+        private System.Windows.Forms.TextBox txt_Cartao;
         private System.Windows.Forms.Label lbCaid;
         private System.Windows.Forms.Label lbCartao;
         private System.Windows.Forms.Label lb_NomeCliente;
@@ -327,5 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cartaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoInstalacao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button btn_abrir;
+        private System.Windows.Forms.Button btn_excluir;
     }
 }

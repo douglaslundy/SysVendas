@@ -21,9 +21,9 @@ namespace ERP.frm
                 case Keys.Escape:
                     Dispose();
                     break;
-                //case Keys.F3:
-                //    AbrirFormEquipamentos();
-                //    break;
+                case Keys.F3:
+                    AbrirFormEquipamentos();
+                    break;
 
                 case Keys.F4:
                     AbrirFormListaComprasPagas();

@@ -18,12 +18,14 @@ namespace ERP.Equipamentos
 
         public void Adicionar(Equipamento e)
         {
-            throw new NotImplementedException();
+            contexto.Equipamentos.Add(e);
+            contexto.SaveChanges();
         }
 
         public void Atualizar(Equipamento e)
         {
-            throw new NotImplementedException();
+            contexto.Equipamentos.Update(e);
+            contexto.SaveChanges();
         }
 
         public IList<Equipamento> Listar()
@@ -40,6 +42,18 @@ namespace ERP.Equipamentos
         {
             return contexto.Equipamentos
                 .Where(v => v.ClienteId == clienteId).ToList();
+        }
+
+        public Equipamento PesquisarPorId(int id)
+        {
+            //return contexto.Equipamentos.Where(e => e.Id == id).First();
+            return contexto.Equipamentos.Find(id);
+        }
+
+        public void Excluir(Equipamento equipamento)
+        {
+            contexto.Equipamentos.Remove(equipamento);
+            contexto.SaveChanges();
         }
     }
 }

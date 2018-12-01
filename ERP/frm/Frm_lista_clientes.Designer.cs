@@ -38,13 +38,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_clientes = new System.Windows.Forms.DataGridView();
+            this.btn_compras_pendentes = new System.Windows.Forms.Button();
+            this.btn_equipamentos = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.limiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldoDebitosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_compras_pendentes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +121,30 @@
             this.dgv_clientes.Size = new System.Drawing.Size(760, 270);
             this.dgv_clientes.TabIndex = 30;
             // 
+            // btn_compras_pendentes
+            // 
+            this.btn_compras_pendentes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_compras_pendentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_compras_pendentes.Location = new System.Drawing.Point(384, 376);
+            this.btn_compras_pendentes.Name = "btn_compras_pendentes";
+            this.btn_compras_pendentes.Size = new System.Drawing.Size(184, 36);
+            this.btn_compras_pendentes.TabIndex = 37;
+            this.btn_compras_pendentes.Text = "[ F4 ] - Compras Pagas";
+            this.btn_compras_pendentes.UseVisualStyleBackColor = true;
+            this.btn_compras_pendentes.Click += new System.EventHandler(this.btn_compras_pendentes_Click);
+            // 
+            // btn_equipamentos
+            // 
+            this.btn_equipamentos.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_equipamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_equipamentos.Location = new System.Drawing.Point(447, 33);
+            this.btn_equipamentos.Name = "btn_equipamentos";
+            this.btn_equipamentos.Size = new System.Drawing.Size(212, 36);
+            this.btn_equipamentos.TabIndex = 38;
+            this.btn_equipamentos.Text = "[ F3 ] - Equipamentos";
+            this.btn_equipamentos.UseVisualStyleBackColor = true;
+            this.btn_equipamentos.Click += new System.EventHandler(this.btn_equipamentos_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -174,24 +199,13 @@
             // 
             this.clienteBindingSource.DataSource = typeof(ERP.Clientes.Cliente);
             // 
-            // btn_compras_pendentes
-            // 
-            this.btn_compras_pendentes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_compras_pendentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_compras_pendentes.Location = new System.Drawing.Point(384, 376);
-            this.btn_compras_pendentes.Name = "btn_compras_pendentes";
-            this.btn_compras_pendentes.Size = new System.Drawing.Size(184, 36);
-            this.btn_compras_pendentes.TabIndex = 37;
-            this.btn_compras_pendentes.Text = "[ F4 ] - Compras Pagas";
-            this.btn_compras_pendentes.UseVisualStyleBackColor = true;
-            this.btn_compras_pendentes.Click += new System.EventHandler(this.btn_compras_pendentes_Click);
-            // 
             // Frm_lista_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 422);
+            this.Controls.Add(this.btn_equipamentos);
             this.Controls.Add(this.btn_compras_pendentes);
             this.Controls.Add(this.lb_total_debitosAReceber);
             this.Controls.Add(this.btn_pagar_debitos);
@@ -228,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn limiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn saldoDebitosDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_compras_pendentes;
+        private System.Windows.Forms.Button btn_equipamentos;
     }
 }

@@ -54,14 +54,14 @@ namespace ERP.Clientes
             return clientes.ToList();
         }
 
-        public IList<Cliente> PesquisarPorNomeOuCpf(string termo)
+        public IList<Cliente> PesquisarPorNomeOuCpf(string item)
         {
             var dados = contexto.Clientes
                 .Where(p => p.Status == true);
 
             dados = dados
-                .Where(cli => cli.NomeCompleto.Nome.Contains(termo) 
-                || cli.NomeCompleto.Sobrenome.Contains(termo) || cli.Cpf.Numero.Contains(termo));
+                .Where(cli => cli.NomeCompleto.Nome.Contains(item) 
+                || cli.NomeCompleto.Sobrenome.Contains(item) || cli.Cpf.Numero.Contains(item));
             return dados.ToList();
         }
     }

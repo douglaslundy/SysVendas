@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xjTi+Yhmmr6b/eXQA1p4/UMnRYwqDj5wTdDN3TXFcko=</dsig:DigestValue>
+        <dsig:DigestValue>FqRZCOA2ZTMSHzK8kxEs5m4sM6FsdtsnZzW1/qo0vhs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERP.exe" size="2902000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ERP.exe" size="2905072">
       <assemblyIdentity name="ERP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WMhMoFD8XB72s++E8+Qbb0pJ3gYYYYiAajeTvXkWqEY=</dsig:DigestValue>
+        <dsig:DigestValue>Ed6ADAnxucgaKeZ94hWNCLwjkKTEc1nEq/OtCCYRf44=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F3IgJL9mN06Mk4+FJZZ1aRW8X/FJwGs+qYdjymp7x7I=</dsig:DigestValue>
+        <dsig:DigestValue>jJnwCCXYkE9X6UosmcYXljkJZuKeqSWzWdsJctbwMpo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1635,13 +1635,13 @@
       <dsig:DigestValue>y86n5G9XFJqvl5by+nfIUTCa4qwmt8PqYo0ddotq2r0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ERP.exe.config" size="20314">
+  <file name="ERP.exe.config" size="20402">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+aTr2urzfPwxrwoKswzAfJiVtI/t6fWa53QihHDd+M8=</dsig:DigestValue>
+      <dsig:DigestValue>83fkq4IexrwMCrEZYeztFefQ4gWRkmes2Lrprh92ikE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="images\03.ico" size="67646">

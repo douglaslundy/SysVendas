@@ -16,11 +16,35 @@ namespace ERP.Equipamentos
         public int? ClienteId { get; set; }
         public bool Ativo { get; set; }
 
+        public void Salvar(Equipamento equipamento)
+        {
+            var Equipamento = new EquipamentoDAO();
+            Equipamento.Adicionar(equipamento);
+        }
+
 
         public IList<Equipamento> ListarEquipamentosPorCliente(int clienteId)
         {
             var Equipamentos = new EquipamentoDAO();
             return Equipamentos.ListarEquipamentosPorCliente(clienteId);
+        }
+
+        public Equipamento PesquisarPorId(int id)
+        {
+            var Equipamento = new EquipamentoDAO();
+            return Equipamento.PesquisarPorId(id);
+        }
+
+        internal void Atualizar(Equipamento equipamento)
+        {
+            var Equipamento = new EquipamentoDAO();
+            Equipamento.Atualizar(equipamento);
+        }
+
+        internal void Excluir(Equipamento equipamento)
+        {
+            var Equipamento = new EquipamentoDAO();
+            Equipamento.Excluir(equipamento);
         }
     }
     
