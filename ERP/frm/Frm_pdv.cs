@@ -1,4 +1,5 @@
-﻿using ERP.Carrinhos;
+﻿using ERP.Balancas;
+using ERP.Carrinhos;
 using ERP.Produtos;
 using ERP.SessaoUsuario;
 using ERP.Usuarios;
@@ -105,15 +106,15 @@ namespace ERP.frm
                     throw new Exception("O desconto não pode ser maior que o total da venda");
 
                 txt_valor_total.Text = (valorTotal - valorDesconto).ToString();
-                
-                if(Desconto > 0)
+
+                if (Desconto > 0)
                     lb_desconto.Visible = true;
                 else
                     lb_desconto.Visible = false;
 
                 lb_desconto.Text = Desconto.ToString("C");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Desconto = 0;
                 MessageBox.Show("Houve uma falha ao atualizar valores \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -221,7 +222,7 @@ namespace ERP.frm
             InserirProdutoCarrinho(codigo);
         }
 
-        
+
         public void SubtraiEstoque()
         {
 
@@ -233,6 +234,48 @@ namespace ERP.frm
             {
                 lb_nome_produto.Text = "";
                 var Produto = new Produto();
+                Balanca balanca = new Balanca().PegaDadosBalanca();
+
+                int DigitoInicial = balanca.DigitoInicial;
+                int InicioValor = balanca.InicioValor;
+                int FimValor = balanca.FimValor;
+                int InicioCodigo = balanca.InicioCodigo;
+                int FimCodigo = balanca.FimCodigo;
+
+                int TamanhoValor = (FimValor - InicioValor) + 1;
+                int TamanhoCodigo = (FimCodigo - InicioCodigo) + 1;
+
+                if (int.Parse(codigo.Substring(0, 1)) == DigitoInicial && codigo.Length == balanca.Tamanho)
+                {
+                    if (balanca.Ativo == true)
+                    {
+                        string ValorOuPreco = codigo.Substring(InicioValor, TamanhoValor);
+                        string CodigoProduto = codigo.Substring(InicioCodigo, TamanhoCodigo);
+
+
+                        // Caso nao tenha codigo de produto define sendo 1
+                       // if (int.Parse(CodigoProduto) <= 0)
+                         //   CodigoProduto = "1";
+
+                        ValorOuPreco = ValorOuPreco.Insert(TamanhoValor - 2, ",");
+
+                       
+                        // eliminando terceiro digito do codigo se for 0
+                        if (CodigoProduto.Length > 2 && CodigoProduto.Substring(0, 1) == "0")
+                            CodigoProduto = CodigoProduto.Substring(1,2);
+
+
+                        //MessageBox.Show("Valor " + ValorOuPreco + " Codigo " + CodigoProduto);
+
+
+                        codigo = ValorOuPreco + "*" + CodigoProduto;
+                    }
+                    else
+                    {
+                        throw new Exception("O Sistema não esta configurado para ler codigos de balança");
+                    }
+                }
+
                 if (Produto.VerificaSeProdutoJaCadastrado(PegaCodigo(codigo)))
                 {
                     Produto = Produto.PesquisaProdutoPorCodigo(PegaCodigo(codigo));
@@ -253,7 +296,7 @@ namespace ERP.frm
                     ListaProdutosCarrinho();
                 }
                 else
-                {                    
+                {
                     LimparTextbox(this);
                     lb_nome_produto.Text = "Produto não cadastrado";
                     AbrirFormProdutoNaoCadastrado();

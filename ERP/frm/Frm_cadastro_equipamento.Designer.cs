@@ -33,12 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_equipamentos = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cartaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnderecoInstalacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.equipamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_gravar = new System.Windows.Forms.Button();
             this.txt_Caid = new System.Windows.Forms.TextBox();
@@ -54,6 +48,12 @@
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.btn_abrir = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cartaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnderecoInstalacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_equipamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +62,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(665, 9);
+            this.label2.Location = new System.Drawing.Point(887, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(133, 25);
             this.label2.TabIndex = 33;
             this.label2.Text = "[ Esc ] - Sair";
             // 
@@ -72,9 +73,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Location = new System.Drawing.Point(16, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 34;
             this.label1.Text = "Cliente:";
             // 
@@ -94,11 +96,171 @@
             this.EnderecoInstalacao,
             this.ativoDataGridViewCheckBoxColumn});
             this.dgv_equipamentos.DataSource = this.equipamentoBindingSource;
-            this.dgv_equipamentos.Location = new System.Drawing.Point(12, 189);
+            this.dgv_equipamentos.Location = new System.Drawing.Point(16, 233);
+            this.dgv_equipamentos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv_equipamentos.Name = "dgv_equipamentos";
             this.dgv_equipamentos.ReadOnly = true;
-            this.dgv_equipamentos.Size = new System.Drawing.Size(760, 169);
+            this.dgv_equipamentos.Size = new System.Drawing.Size(1013, 208);
             this.dgv_equipamentos.TabIndex = 35;
+            // 
+            // equipamentoBindingSource
+            // 
+            this.equipamentoBindingSource.DataSource = typeof(ERP.Equipamentos.Equipamento);
+            // 
+            // btn_gravar
+            // 
+            this.btn_gravar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_gravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_gravar.Location = new System.Drawing.Point(851, 460);
+            this.btn_gravar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_gravar.Name = "btn_gravar";
+            this.btn_gravar.Size = new System.Drawing.Size(179, 44);
+            this.btn_gravar.TabIndex = 36;
+            this.btn_gravar.Text = "[ F12 ] - Gravar";
+            this.btn_gravar.UseVisualStyleBackColor = true;
+            this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
+            // 
+            // txt_Caid
+            // 
+            this.txt_Caid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Caid.Location = new System.Drawing.Point(21, 169);
+            this.txt_Caid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Caid.Name = "txt_Caid";
+            this.txt_Caid.Size = new System.Drawing.Size(272, 30);
+            this.txt_Caid.TabIndex = 2;
+            // 
+            // txt_Cartao
+            // 
+            this.txt_Cartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Cartao.Location = new System.Drawing.Point(303, 169);
+            this.txt_Cartao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Cartao.Name = "txt_Cartao";
+            this.txt_Cartao.Size = new System.Drawing.Size(272, 30);
+            this.txt_Cartao.TabIndex = 3;
+            // 
+            // lbCaid
+            // 
+            this.lbCaid.AutoSize = true;
+            this.lbCaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCaid.Location = new System.Drawing.Point(16, 140);
+            this.lbCaid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCaid.Name = "lbCaid";
+            this.lbCaid.Size = new System.Drawing.Size(64, 25);
+            this.lbCaid.TabIndex = 39;
+            this.lbCaid.Text = "CAID";
+            // 
+            // lbCartao
+            // 
+            this.lbCartao.AutoSize = true;
+            this.lbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCartao.Location = new System.Drawing.Point(297, 140);
+            this.lbCartao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCartao.Name = "lbCartao";
+            this.lbCartao.Size = new System.Drawing.Size(103, 25);
+            this.lbCartao.TabIndex = 40;
+            this.lbCartao.Text = "CARTÂO";
+            // 
+            // lb_NomeCliente
+            // 
+            this.lb_NomeCliente.AutoSize = true;
+            this.lb_NomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NomeCliente.Location = new System.Drawing.Point(117, 17);
+            this.lb_NomeCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_NomeCliente.Name = "lb_NomeCliente";
+            this.lb_NomeCliente.Size = new System.Drawing.Size(359, 25);
+            this.lb_NomeCliente.TabIndex = 41;
+            this.lb_NomeCliente.Text = "Aqui vai o nome completo do cliente";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(559, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 25);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "CPF:";
+            // 
+            // lb_CPF
+            // 
+            this.lb_CPF.AutoSize = true;
+            this.lb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_CPF.Location = new System.Drawing.Point(660, 17);
+            this.lb_CPF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_CPF.Name = "lb_CPF";
+            this.lb_CPF.Size = new System.Drawing.Size(144, 25);
+            this.lb_CPF.TabIndex = 43;
+            this.lb_CPF.Text = "00000000000";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(579, 140);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 25);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "ENDEREÇO";
+            // 
+            // txt_endereco
+            // 
+            this.txt_endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_endereco.Location = new System.Drawing.Point(584, 169);
+            this.txt_endereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_endereco.Name = "txt_endereco";
+            this.txt_endereco.Size = new System.Drawing.Size(444, 30);
+            this.txt_endereco.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(16, 70);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(217, 25);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "NOME DO USUÁRIO";
+            // 
+            // txt_usuario
+            // 
+            this.txt_usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_usuario.Location = new System.Drawing.Point(21, 98);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(444, 30);
+            this.txt_usuario.TabIndex = 1;
+            // 
+            // btn_abrir
+            // 
+            this.btn_abrir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_abrir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_abrir.Location = new System.Drawing.Point(851, 86);
+            this.btn_abrir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_abrir.Name = "btn_abrir";
+            this.btn_abrir.Size = new System.Drawing.Size(168, 44);
+            this.btn_abrir.TabIndex = 48;
+            this.btn_abrir.Text = "[ F4 ] - Abrir";
+            this.btn_abrir.UseVisualStyleBackColor = true;
+            this.btn_abrir.Click += new System.EventHandler(this.btn_abrir_Click);
+            // 
+            // btn_excluir
+            // 
+            this.btn_excluir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Location = new System.Drawing.Point(656, 460);
+            this.btn_excluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(163, 44);
+            this.btn_excluir.TabIndex = 49;
+            this.btn_excluir.Text = "[ F10 ] - Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Visible = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -107,7 +269,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
+            this.idDataGridViewTextBoxColumn.Width = 48;
             // 
             // NomeUsuario
             // 
@@ -143,7 +305,7 @@
             this.EnderecoInstalacao.HeaderText = "Endereco da instalacao";
             this.EnderecoInstalacao.Name = "EnderecoInstalacao";
             this.EnderecoInstalacao.ReadOnly = true;
-            this.EnderecoInstalacao.Width = 150;
+            this.EnderecoInstalacao.Width = 200;
             // 
             // ativoDataGridViewCheckBoxColumn
             // 
@@ -154,157 +316,12 @@
             this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
             this.ativoDataGridViewCheckBoxColumn.Width = 60;
             // 
-            // equipamentoBindingSource
-            // 
-            this.equipamentoBindingSource.DataSource = typeof(ERP.Equipamentos.Equipamento);
-            // 
-            // btn_gravar
-            // 
-            this.btn_gravar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_gravar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_gravar.Location = new System.Drawing.Point(638, 374);
-            this.btn_gravar.Name = "btn_gravar";
-            this.btn_gravar.Size = new System.Drawing.Size(134, 36);
-            this.btn_gravar.TabIndex = 36;
-            this.btn_gravar.Text = "[ F12 ] - Gravar";
-            this.btn_gravar.UseVisualStyleBackColor = true;
-            this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
-            // 
-            // txt_Caid
-            // 
-            this.txt_Caid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Caid.Location = new System.Drawing.Point(16, 137);
-            this.txt_Caid.Name = "txt_Caid";
-            this.txt_Caid.Size = new System.Drawing.Size(205, 26);
-            this.txt_Caid.TabIndex = 2;
-            // 
-            // txt_Cartao
-            // 
-            this.txt_Cartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Cartao.Location = new System.Drawing.Point(227, 137);
-            this.txt_Cartao.Name = "txt_Cartao";
-            this.txt_Cartao.Size = new System.Drawing.Size(205, 26);
-            this.txt_Cartao.TabIndex = 3;
-            // 
-            // lbCaid
-            // 
-            this.lbCaid.AutoSize = true;
-            this.lbCaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCaid.Location = new System.Drawing.Point(12, 114);
-            this.lbCaid.Name = "lbCaid";
-            this.lbCaid.Size = new System.Drawing.Size(52, 20);
-            this.lbCaid.TabIndex = 39;
-            this.lbCaid.Text = "CAID";
-            // 
-            // lbCartao
-            // 
-            this.lbCartao.AutoSize = true;
-            this.lbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCartao.Location = new System.Drawing.Point(223, 114);
-            this.lbCartao.Name = "lbCartao";
-            this.lbCartao.Size = new System.Drawing.Size(81, 20);
-            this.lbCartao.TabIndex = 40;
-            this.lbCartao.Text = "CARTÂO";
-            // 
-            // lb_NomeCliente
-            // 
-            this.lb_NomeCliente.AutoSize = true;
-            this.lb_NomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NomeCliente.Location = new System.Drawing.Point(88, 14);
-            this.lb_NomeCliente.Name = "lb_NomeCliente";
-            this.lb_NomeCliente.Size = new System.Drawing.Size(297, 20);
-            this.lb_NomeCliente.TabIndex = 41;
-            this.lb_NomeCliente.Text = "Aqui vai o nome completo do cliente";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(419, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "CPF:";
-            // 
-            // lb_CPF
-            // 
-            this.lb_CPF.AutoSize = true;
-            this.lb_CPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_CPF.Location = new System.Drawing.Point(495, 14);
-            this.lb_CPF.Name = "lb_CPF";
-            this.lb_CPF.Size = new System.Drawing.Size(119, 20);
-            this.lb_CPF.TabIndex = 43;
-            this.lb_CPF.Text = "00000000000";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(434, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 20);
-            this.label4.TabIndex = 45;
-            this.label4.Text = "ENDEREÇO";
-            // 
-            // txt_endereco
-            // 
-            this.txt_endereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_endereco.Location = new System.Drawing.Point(438, 137);
-            this.txt_endereco.Name = "txt_endereco";
-            this.txt_endereco.Size = new System.Drawing.Size(334, 26);
-            this.txt_endereco.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 20);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "NOME DO USUÁRIO";
-            // 
-            // txt_usuario
-            // 
-            this.txt_usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.Location = new System.Drawing.Point(16, 80);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(334, 26);
-            this.txt_usuario.TabIndex = 1;
-            // 
-            // btn_abrir
-            // 
-            this.btn_abrir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_abrir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_abrir.Location = new System.Drawing.Point(638, 70);
-            this.btn_abrir.Name = "btn_abrir";
-            this.btn_abrir.Size = new System.Drawing.Size(126, 36);
-            this.btn_abrir.TabIndex = 48;
-            this.btn_abrir.Text = "[ F4 ] - Abrir";
-            this.btn_abrir.UseVisualStyleBackColor = true;
-            this.btn_abrir.Click += new System.EventHandler(this.btn_abrir_Click);
-            // 
-            // btn_excluir
-            // 
-            this.btn_excluir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excluir.Location = new System.Drawing.Point(492, 374);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(122, 36);
-            this.btn_excluir.TabIndex = 49;
-            this.btn_excluir.Text = "[ F10 ] - Excluir";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Visible = false;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
-            // 
             // Frm_cadastro_equipamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(784, 422);
+            this.ClientSize = new System.Drawing.Size(1045, 519);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_abrir);
             this.Controls.Add(this.label5);
@@ -324,6 +341,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm_cadastro_equipamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Equipamento";
@@ -353,13 +371,13 @@
         private System.Windows.Forms.TextBox txt_endereco;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.Button btn_abrir;
+        private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn caidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cartaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnderecoInstalacao;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button btn_abrir;
-        private System.Windows.Forms.Button btn_excluir;
     }
 }

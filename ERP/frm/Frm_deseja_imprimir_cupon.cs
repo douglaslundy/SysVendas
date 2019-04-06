@@ -39,10 +39,11 @@ namespace ERP.frm
             // imprime os dados no documento
             //Tamanho da area de impressao = "123456789-123456789-123456789-123456789-12345678"
 
-            string texto = "            Mercearia Planalto " + "\n";
-            texto += texto = "    Avenida da Felicidade Vilela N 115" + "\n";
-            texto += texto = "             Bairro Jardim Planalto" + "\n";
-            texto += texto = "                 (35)98467-2188" + "\n";
+            string texto =   "Casa da Carne Central a Boutique da Carne" + "\n";
+            texto += texto = "     Avenida 15 de Novembro  N " + "\n";
+            texto += texto = "        Disque Carne Ligou Chegou" + "\n";
+            texto += texto = "          (35)98405-8791" + "\n";
+            texto += texto = "          (35)98456-8137" + "\n";
             texto += texto = "\n";
             texto += texto = "                Cupom Nao Fiscal" + "\n";
             texto += texto = "\n";

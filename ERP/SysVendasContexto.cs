@@ -7,6 +7,7 @@ using ERP.Produtos;
 using ERP.SysVendas;
 using ERP.Usuarios;
 using ERP.Vendas;
+using ERP.Balancas;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -22,6 +23,7 @@ namespace ERP
         public DbSet<ItensVenda> ItensVendas { get; set; }
         public DbSet<Carrinho> Carrinhos { get; set; }
         public DbSet<Equipamento> Equipamentos { get; set; }
+        public DbSet<Balanca> Balancas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -21,6 +21,30 @@ namespace ERP.Migrations
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
+            modelBuilder.Entity("ERP.Balancas.Balanca", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Ativo");
+
+                    b.Property<int>("DigitoInicial");
+
+                    b.Property<int>("FimCodigo");
+
+                    b.Property<int>("FimValor");
+
+                    b.Property<int>("InicioCodigo");
+
+                    b.Property<int>("InicioValor");
+
+                    b.Property<int>("Tamanho");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Balancas");
+                });
+
             modelBuilder.Entity("ERP.Carrinhos.Carrinho", b =>
                 {
                     b.Property<int>("Id")

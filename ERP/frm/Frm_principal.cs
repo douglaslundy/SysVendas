@@ -46,6 +46,10 @@ namespace ERP.frm
                         AbreFormEntradaEstoque();
                         break;
 
+                    case Keys.F6:
+                        AbreFormConfigBalanca();
+                        break;
+
                     case Keys.F12:
                         AbreFormPdv();
                         break;
@@ -67,7 +71,11 @@ namespace ERP.frm
         {
             Login.Dispose();
         }
-        
+
+        private void balancaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbreFormConfigBalanca();
+        }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -99,6 +107,20 @@ namespace ERP.frm
                 MessageBox.Show("Houve  um problema ao construir tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void AbreFormConfigBalanca()
+        {
+            try
+            {
+                var Balanca = new Frm_configura_balanca();
+                Balanca.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve  um problema ao construir tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         public void AbreFormCadastrarFuncionarios()
         {
@@ -308,6 +330,6 @@ namespace ERP.frm
                 }
 
             }
-        }
+        }               
     }
 }

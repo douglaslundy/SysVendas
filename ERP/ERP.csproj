@@ -56,13 +56,19 @@
     <ManifestKeyFile>ERP_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>03.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -233,6 +239,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Balancas\Balanca.cs" />
+    <Compile Include="Balancas\BalancaDAO.cs" />
+    <Compile Include="Balancas\IBalanca.cs" />
     <Compile Include="Carrinhos\CarrinhoDAO.cs" />
     <Compile Include="Carrinhos\ICarrinho.cs" />
     <Compile Include="Comum\Pessoa.cs" />
@@ -252,6 +261,12 @@
     </Compile>
     <Compile Include="frm\Frm_cadastro_equipamento.Designer.cs">
       <DependentUpon>Frm_cadastro_equipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\Frm_configura_balanca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\Frm_configura_balanca.Designer.cs">
+      <DependentUpon>Frm_configura_balanca.cs</DependentUpon>
     </Compile>
     <Compile Include="frm\Frm_produto_não_cadastrado.cs">
       <SubType>Form</SubType>
@@ -276,6 +291,10 @@
     <Compile Include="Migrations\20181110213303_novosCamposEquipamento.cs" />
     <Compile Include="Migrations\20181110213303_novosCamposEquipamento.designer.cs">
       <DependentUpon>20181110213303_novosCamposEquipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20190404132027_balanca.cs" />
+    <Compile Include="Migrations\20190404132027_balanca.designer.cs">
+      <DependentUpon>20190404132027_balanca.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SysVendasContextoModelSnapshot.cs" />
     <Compile Include="ObjetosValor\ValorTotal.cs" />
@@ -495,6 +514,9 @@
     <EmbeddedResource Include="frm\Frm_compras_por_cliente.resx">
       <DependentUpon>Frm_compras_por_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\Frm_configura_balanca.resx">
+      <DependentUpon>Frm_configura_balanca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_desconto.resx">
       <DependentUpon>Frm_desconto.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +600,7 @@
     </Compile>
     <None Include="ERP_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\ERP.Carrinhos.Carrinho.datasource" />
     <None Include="Properties\DataSources\ERP.Clientes.Cliente.datasource" />
     <None Include="Properties\DataSources\ERP.Clientes.ClienteDAO.datasource" />
