@@ -39,7 +39,8 @@ namespace ERP.frm
             // imprime os dados no documento
             //Tamanho da area de impressao = "123456789-123456789-123456789-123456789-12345678"
 
-            string texto =   "Casa da Carne Central a Boutique da Carne" + "\n";
+            string texto   = "      Casa da Carne Central" + "\n";
+            texto += texto = "      A Boutique da Carne" + "\n";
             texto += texto = "     Avenida 15 de Novembro  N " + "\n";
             texto += texto = "        Disque Carne Ligou Chegou" + "\n";
             texto += texto = "          (35)98405-8791" + "\n";

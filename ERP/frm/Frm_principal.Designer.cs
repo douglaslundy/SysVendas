@@ -33,6 +33,8 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.balancaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consolidadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesInadimplentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +58,6 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.balancaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,6 +106,20 @@
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(332, 36);
             this.produtosToolStripMenuItem.Text = "[ F3 ] - Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(332, 36);
+            this.toolStripMenuItem2.Text = "[ F4 ] - Funcionarios";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // balancaToolStripMenuItem
+            // 
+            this.balancaToolStripMenuItem.Name = "balancaToolStripMenuItem";
+            this.balancaToolStripMenuItem.Size = new System.Drawing.Size(332, 36);
+            this.balancaToolStripMenuItem.Text = "[ F6 ] - Config Balança";
+            this.balancaToolStripMenuItem.Click += new System.EventHandler(this.balancaToolStripMenuItem_Click);
             // 
             // consolidadoToolStripMenuItem
             // 
@@ -195,8 +209,9 @@
             // chaveToolStripMenuItem
             // 
             this.chaveToolStripMenuItem.Name = "chaveToolStripMenuItem";
-            this.chaveToolStripMenuItem.Size = new System.Drawing.Size(162, 36);
+            this.chaveToolStripMenuItem.Size = new System.Drawing.Size(216, 36);
             this.chaveToolStripMenuItem.Text = "Chave";
+            this.chaveToolStripMenuItem.Click += new System.EventHandler(this.chaveToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -256,7 +271,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.Location = new System.Drawing.Point(24, 127);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1157, 513);
             this.pictureBox1.TabIndex = 4;
@@ -305,19 +320,6 @@
             this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(332, 36);
-            this.toolStripMenuItem2.Text = "[ F4 ] - Funcionarios";
-            // 
-            // balancaToolStripMenuItem
-            // 
-            this.balancaToolStripMenuItem.Name = "balancaToolStripMenuItem";
-            this.balancaToolStripMenuItem.Size = new System.Drawing.Size(332, 36);
-            this.balancaToolStripMenuItem.Text = "[ F6 ] - Config Balança";
-            this.balancaToolStripMenuItem.Click += new System.EventHandler(this.balancaToolStripMenuItem_Click);
-            // 
             // Frm_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,7 +331,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1226, 706);
             this.Name = "Frm_principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

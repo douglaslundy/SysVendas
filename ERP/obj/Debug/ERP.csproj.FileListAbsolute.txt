@@ -794,5 +794,5 @@ C:\Users\user\source\repos\SysVendas\ERP\bin\Debug\MySql.Data.xml
 C:\Users\user\source\repos\SysVendas\ERP\bin\Debug\Google.Protobuf.xml
 C:\Users\user\source\repos\SysVendas\ERP\obj\Debug\ERP.csproj.CopyComplete
 C:\Users\user\source\repos\SysVendas\ERP\bin\Debug\DotNetZip.dll
-C:\Users\user\source\repos\SysVendas\ERP\bin\Debug\DotNetZip.xml
 C:\Users\user\source\repos\SysVendas\ERP\obj\Debug\ERP.frm.Frm_configura_balanca.resources
+C:\Users\user\source\repos\SysVendas\ERP\obj\Debug\ERP.frm.Frm_geraKeys.resources

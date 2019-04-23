@@ -160,7 +160,7 @@ namespace ERP.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Ativa");
+                    b.Property<int>("DisponivelParaAtivar");
 
                     b.Property<Guid>("Chave");
 
@@ -170,7 +170,7 @@ namespace ERP.Migrations
 
                     b.Property<int>("Dias");
 
-                    b.Property<int>("Utilizada");
+                    b.Property<int>("DisponivelParaUtilizar");
 
                     b.HasKey("Id");
 

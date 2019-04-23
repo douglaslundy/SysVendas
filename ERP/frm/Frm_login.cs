@@ -1,6 +1,7 @@
 ﻿using ERP.frm;
 using ERP.SessaoUsuario;
 using ERP.Usuarios;
+using ERP.SysVendas;
 using System;
 using System.Windows.Forms;
 
@@ -55,8 +56,18 @@ namespace SysVendas.frm
                     Sessao.Telefone = usuario.Telefone.Numero;
                     Sessao.Status = usuario.Status;
 
-                    AbreFormPrincipal();
-                    this.Visible = false;
+                    var sys = new SysVenda();
+
+                    if (sys.ValidaChave())
+                    {
+                        AbreFormPrincipal();
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        AbreFormInfo();
+                        this.Visible = false;
+                    }
                 }
                 else
                 {
@@ -75,6 +86,19 @@ namespace SysVendas.frm
             {
                 var Principal = new Frm_principal(Inicializa);
                 Principal.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve  um problema ao construir tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void AbreFormInfo()
+        {
+            try
+            {
+                var TelaBloqueio = new Frm_tela_de_bloqueio(this);
+                TelaBloqueio.Show();
             }
             catch (Exception ex)
             {

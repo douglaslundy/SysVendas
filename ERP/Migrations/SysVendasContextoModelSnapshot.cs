@@ -188,9 +188,7 @@ namespace ERP.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Ativa");
-
-                    b.Property<Guid>("Chave");
+                    b.Property<string>("Chave");
 
                     b.Property<DateTime>("DataAtivacao");
 
@@ -198,7 +196,9 @@ namespace ERP.Migrations
 
                     b.Property<int>("Dias");
 
-                    b.Property<int>("Utilizada");
+                    b.Property<int>("DisponivelParaAtivar");
+
+                    b.Property<int>("DisponivelParaUtilizar");
 
                     b.HasKey("Id");
 

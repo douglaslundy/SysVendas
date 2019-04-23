@@ -268,6 +268,12 @@
     <Compile Include="frm\Frm_configura_balanca.Designer.cs">
       <DependentUpon>Frm_configura_balanca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\Frm_geraKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\Frm_geraKeys.Designer.cs">
+      <DependentUpon>Frm_geraKeys.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\Frm_produto_não_cadastrado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,31 +282,17 @@
     </Compile>
     <Compile Include="ItensVendas\IItensVenda.cs" />
     <Compile Include="ItensVendas\ItensVendaDAO.cs" />
-    <Compile Include="Migrations\20180303192014_start.cs" />
-    <Compile Include="Migrations\20180303192014_start.designer.cs">
-      <DependentUpon>20180303192014_start.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20180305000048_corrigirvalormonetario.cs" />
-    <Compile Include="Migrations\20180305000048_corrigirvalormonetario.designer.cs">
-      <DependentUpon>20180305000048_corrigirvalormonetario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20181110211901_equipamento.cs" />
-    <Compile Include="Migrations\20181110211901_equipamento.designer.cs">
-      <DependentUpon>20181110211901_equipamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20181110213303_novosCamposEquipamento.cs" />
-    <Compile Include="Migrations\20181110213303_novosCamposEquipamento.designer.cs">
-      <DependentUpon>20181110213303_novosCamposEquipamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20190404132027_balanca.cs" />
-    <Compile Include="Migrations\20190404132027_balanca.designer.cs">
-      <DependentUpon>20190404132027_balanca.cs</DependentUpon>
+    <Compile Include="Migrations\20190422193108_start.cs" />
+    <Compile Include="Migrations\20190422193108_start.designer.cs">
+      <DependentUpon>20190422193108_start.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SysVendasContextoModelSnapshot.cs" />
     <Compile Include="ObjetosValor\ValorTotal.cs" />
     <Compile Include="Produtos\ProdutoDAO.cs" />
     <Compile Include="SessaoUsuario\Sessao.cs" />
     <Compile Include="SessaoUsuario\UsuarioLogado.cs" />
+    <Compile Include="SysVendas\ISysVenda.cs" />
+    <Compile Include="SysVendas\SysVendaDAO.cs" />
     <Compile Include="Usuarios\UsuarioDAO.cs" />
     <Compile Include="Vendas\VendaDAO.cs" />
     <Compile Include="Carrinhos\Carrinho.cs" />
@@ -399,10 +391,10 @@
     <Compile Include="frm\Frm_inicializa.Designer.cs">
       <DependentUpon>Frm_inicializa.cs</DependentUpon>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_inserir_chave_ativacao.cs">
+    <Compile Include="frm\Frm_inserir_chave_ativacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_inserir_chave_ativacao.Designer.cs">
+    <Compile Include="frm\Frm_inserir_chave_ativacao.Designer.cs">
       <DependentUpon>Frm_inserir_chave_ativacao.cs</DependentUpon>
     </Compile>
     <Compile Include="frm\Frm_liberar_venda.cs">
@@ -453,10 +445,10 @@
     <Compile Include="frm\Frm_remover_item_pdv.Designer.cs">
       <DependentUpon>Frm_remover_item_pdv.cs</DependentUpon>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_renovar_chave_ativacao.cs">
+    <Compile Include="frm\Frm_renovar_chave_ativacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_renovar_chave_ativacao.Designer.cs">
+    <Compile Include="frm\Frm_renovar_chave_ativacao.Designer.cs">
       <DependentUpon>Frm_renovar_chave_ativacao.cs</DependentUpon>
     </Compile>
     <Compile Include="frm\Frm_selecionar_cliente.cs">
@@ -465,10 +457,10 @@
     <Compile Include="frm\Frm_selecionar_cliente.Designer.cs">
       <DependentUpon>Frm_selecionar_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_tela_de_bloqueio.cs">
+    <Compile Include="frm\Frm_tela_de_bloqueio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="APAGAR_DEPOIS\Frm_tela_de_bloqueio.Designer.cs">
+    <Compile Include="frm\Frm_tela_de_bloqueio.Designer.cs">
       <DependentUpon>Frm_tela_de_bloqueio.cs</DependentUpon>
     </Compile>
     <Compile Include="frm\Frm_valor_cliente_pagou.cs">
@@ -538,13 +530,16 @@
     <EmbeddedResource Include="frm\Frm_finalizar_venda.resx">
       <DependentUpon>Frm_finalizar_venda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\Frm_geraKeys.resx">
+      <DependentUpon>Frm_geraKeys.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_inform_prazo_da_venda.resx">
       <DependentUpon>Frm_inform_prazo_da_venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_inicializa.resx">
       <DependentUpon>Frm_inicializa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="APAGAR_DEPOIS\Frm_inserir_chave_ativacao.resx">
+    <EmbeddedResource Include="frm\Frm_inserir_chave_ativacao.resx">
       <DependentUpon>Frm_inserir_chave_ativacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_liberar_venda.resx">
@@ -574,13 +569,13 @@
     <EmbeddedResource Include="frm\Frm_remover_item_pdv.resx">
       <DependentUpon>Frm_remover_item_pdv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="APAGAR_DEPOIS\Frm_renovar_chave_ativacao.resx">
+    <EmbeddedResource Include="frm\Frm_renovar_chave_ativacao.resx">
       <DependentUpon>Frm_renovar_chave_ativacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_selecionar_cliente.resx">
       <DependentUpon>Frm_selecionar_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="APAGAR_DEPOIS\Frm_tela_de_bloqueio.resx">
+    <EmbeddedResource Include="frm\Frm_tela_de_bloqueio.resx">
       <DependentUpon>Frm_tela_de_bloqueio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\Frm_valor_cliente_pagou.resx">
@@ -658,6 +653,9 @@
       <Project>{F18AFC10-7782-4192-9775-1CB54DDCEF7D}</Project>
       <Name>BackupMySql</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="APAGAR_DEPOIS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

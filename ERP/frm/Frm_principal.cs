@@ -5,6 +5,7 @@ using SysVendas.frm;
 using MySql.Data.MySqlClient;
 using System.Net;
 using BackupMySql;
+using ERP.SysVendas;
 
 namespace ERP.frm
 {
@@ -15,8 +16,9 @@ namespace ERP.frm
         {
             InitializeComponent();
 
-            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/mm/yyyy");
+            toolStripStatusLabel2.Text = DateTime.Now.ToString("dd/MM/yyyy");
             toolStripStatusLabel3.Text = "Seu sistema expira emm ";
+            toolStripStatusLabel4.Text = this.PegarDataExpira().ToString("dd/MM/yyyy");
             Login = login;
         }
         
@@ -54,12 +56,21 @@ namespace ERP.frm
                         AbreFormPdv();
                         break;
 
+                    case Keys.Home:
+                        AbreGeraKeys();
+                        break;
                 }
             }
             catch (Exception i)
             {
                 MessageBox.Show("Houve um problema na ação realizada \n" + i.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void AbreGeraKeys()
+        {
+            Frm_geraKeys gK = new Frm_geraKeys();
+            gK.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +103,19 @@ namespace ERP.frm
             catch (Exception ex)
             {
                 MessageBox.Show("Houve  um problema ao construir tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DateTime PegarDataExpira()
+        {
+            try
+            {
+                var sys = new SysVendaDAO();
+                return sys.PegaChavesEmUso().DataExpira;
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Houve  um problema ao construir tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return DateTime.Now;
             }
         }
 
@@ -235,6 +259,21 @@ namespace ERP.frm
             }
         }
 
+
+        public void AbreFormInsereChave()
+        {
+            try
+            {
+                var insereChave = new Frm_renovar_chave_ativacao();
+                insereChave.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve uma falha ao construir a tela \n" + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public void AbreFormClientes_inadimplenteso()
         {
             try
@@ -330,6 +369,16 @@ namespace ERP.frm
                 }
 
             }
-        }               
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AbreFormCadastrarFuncionarios();
+        }
+
+        private void chaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbreFormInsereChave();
+        }
     }
 }
